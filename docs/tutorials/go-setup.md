@@ -23,7 +23,7 @@ git init
 ```
 The next step involves creating a file within your workspace to include any additional explanation for your project. We call this file our README
 ``` py
-echo "# Welcome to Go!" > README.md
+echo "https://margotbohlin.github.io/comp423-course-notes/tutorials/hello-go/" > README.md
 git add README.md
 git commit -m "Add initial README for Go project"
 ```
@@ -34,6 +34,48 @@ git remote add origin https://github.com/<your-username>/hello-go.git
 !!! note
 
     Origin is used as the name of your remote repository on the line above. You can choose a different name, but origin is the conventional choice.
+
+# Creating a Remote Repository on GitHub
+1. Navigate to the Create a New Repository page after logging into GitHub
+2. Fill in the details as follows:
+    * __Repository Name__: first-rust-project
+    * __Description__: "Following a Rust tutorial."
+    * __Visibility__: Public
+4. Click Create Repository
+
+# Link your Local Repository to GitHub
+1. Add the GitHub repository as a remote
+``` bash
+git remote add origin https://github.com/<username>/first-rust-project.git
+```
+2. Rename your default branch name to main if it is not main already using the command below
+``` bash
+git branch -M main
+```
+3. Push your local commits to the GitHub repository
+``` bash
+git push --set-upstream origin main
+```
+
+## Setting Up the Development Enviornment
+
+1. Open the `first-rust-project` directory in VS Code
+2. Install the Dev Containers extension for VS Code
+3. Create a `.devcontainer` directory in the root of your project with the following file inside:
+`.devcontainer/devcontainer.json`
+4. Add the following code into that file:
+``` json
+{
+  "name": "First Rust Project",
+  "image": "mcr.microsoft.com/devcontainers/rust:latest",
+  "customizations": {
+    "vscode": {
+      "settings": {},
+      "extensions": ["rust-lang.rust-analyzer"]
+    }
+  }
+}
+```
 
 
 ## Setting Up DevContainer

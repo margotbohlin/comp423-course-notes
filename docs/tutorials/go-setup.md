@@ -7,7 +7,9 @@
 This tutorial will walk you through creating a basic "Hello World"-like project in Go. You will set up a Dev Container and use Git to merge/push changes in your code and store your project's collective history.
 
 ## Prerequistes
+
 Before beginning the tutorial, you should have these prerequistes:
+
 1. GitHub- to track versions of your code
 2. Git - to navigate throughout histories of your code and push changes 
 3. Visual Studio Code - Any text editor will do, but VSCode is MY personal preference
@@ -16,14 +18,14 @@ Before beginning the tutorial, you should have these prerequistes:
 ## Getting Started with Git
 You will want to create a new directory for every project you make. Let's call our directory "hello-go" because it is your first time using go
 Copy the code below line by line into your terminal to create the directory, move into it, and turn it into a git repository:
-``` py
+``` bash
 mkdir hello-go
 cd hello-go
 git init
 ```
 The next step involves creating a file within your workspace to include any additional explanation for your project. We call this file our README
-``` py
-echo "https://<your-username>.github.io/comp423-course-notes/tutorials/go-setup/" > README.md
+``` bash
+echo "https://margotbohlin.github.io/comp423-course-notes/tutorials/go-setup/" > README.md
 git add README.md
 git commit -m "Add initial README for Go project"
 ```
@@ -36,9 +38,15 @@ A remote repository is a version of your project stored on a network so that mul
     * __Visibility__: Public
 4. Create Repository
 5. Make your GitHub repository remote:
-``` py
+``` bash
 git remote add origin https://github.com/<your-username>/hello-go.git
 ``` 
+
+!!! note
+
+    Replace your_username with your github username.
+
+
 6. Rename your default branch name to main if it is something different such as "master"
 ``` py
 git branch -M main
@@ -81,46 +89,48 @@ git push --set-upstream origin main
 6. Type "Dev Containers: Reopen in Container," and select the option.
 7. Your final step is to check the version of Go your dev container is running to make sure it is up to date. Open a new terminal in VSCode and run `go version`
 
+!!! success
+
+    Latest go version as of January 2025 is go version go1.23.4 linux/arm64
 
 ## Your First Go Project
 
 To create your first "hello world"-like Go project, follow the steps below!
 
-*   Open your terminal and cd to your created directory:
+1. Run the following command to initialize a new Go module:
 
-`cd hello-go` 
+`go mod init hello_comp423`
 
-*  Enable dependency tracking for your code
+2. Create a `hello.go` file in the root directory (`hello-go`)
 
-`$ go mod init example/hello`
+3. Add the following code inside the `hello.go` file
 
-`go: creating new go.mod: module example/hello`
-
-*  In your text editor, create a file called "hello.go" to write the code below in:
-``` py
+``` go
 package main
 import "fmt"
 func main() {
     fmt.Println("Hello COMP423")
 }
 ```
-## Running your Code
+## Running your Code (Option 1)
 Type the following code into your terminal to see the greeting!
 
 ` go run . `
 
-## Running using 'build'
+## Running using 'build' (Option 2)
 Type the following code into your terminal to use Go's 'build' subcommand:
 
 `go build hello.go`
 
 This should create a file in your current directory where you can execute the binary directly with the following commands:
+
 `./hello` for Mac
 
 `hello.exe` for Windows 
 
 !!! info
-    This command is similar to the gcc command used to compile C programs into executables, or, files a computer runs on its operating system. The `build` subcommand compiles our source code into a binary executable file without executing it.
+    The build subcommand is similar to the gcc command used to compile C programs into executables (files a computer can run on its operating system). The `build` subcommand compiles our source code into a binary executable file without executing it. The run subcommand used in option 1 combines building the executable file and running the binary file in the same step.
+
 
 
 ## Pushing Changes to GitHub Repository

@@ -86,7 +86,7 @@ git push --set-upstream origin main
 ### Additional Steps
 
 5. Reopen your project in a VSCode Dev Container by pressing `Ctrl+Shift+P` or `Cmd+Shift+P` for Macs.
-6. Type "Dev Containers: Reopen in Container," and select the option.
+6. Type "Dev Containers: Reopen in Container," and select the option. This may take a while to load, so be patient. 
 7. Your final step is to check the version of Go your dev container is running to make sure it is up to date. Open a new terminal in VSCode and run `go version`
 
 !!! success
@@ -97,7 +97,7 @@ git push --set-upstream origin main
 
 To create your first "hello world"-like Go project, follow the steps below!
 
-1. Run the following command to initialize a new Go module:
+1. Run the following command in your terminal to initialize a new Go module:
 
 `go mod init hello_comp423`
 

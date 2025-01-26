@@ -16,7 +16,7 @@ Before beginning the tutorial, you should have these prerequistes:
 4. Docker - this is where you will set up your Dev Container
 
 ## Getting Started with Git
-You will want to create a new directory for every project you make. Let's call our directory "hello-go" because it is your first time using go
+You will want to create a new directory for every project you make. Let's call our directory "hello-go" because it is your first time using Go.
 Copy the code below line by line into your terminal to create the directory, move into it, and turn it into a git repository:
 ``` bash
 mkdir hello-go
@@ -44,7 +44,7 @@ git remote add origin https://github.com/<your-username>/hello-go.git
 
 !!! note
 
-    Replace your_username with your github username.
+    Replace <your_username> with your github username.
 
 
 6. Rename your default branch name to main if it is something different such as "master"
